@@ -1,0 +1,1 @@
+export { default as getAllMovies } from "./getAllMovies"; 
