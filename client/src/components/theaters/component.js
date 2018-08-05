@@ -39,13 +39,12 @@ export default class TheaterComponent extends React.Component {
 
 
             moviesServices.getMoviesxTheaters(resu.data._id).then((resu) => {
-                let data = [];
-                resu.data.map(x => {
-                    data.push(x._id);
+               let data = resu.data.map(x => {
+                    return x._id;
                 });
                 this.setState({ LisMovies: data });
             })
-        });
+        }); 
     }
     btnRemove_click(evt) {
         if (window.confirm("esta Seguro que desea Continuar?")) {
@@ -159,13 +158,13 @@ export default class TheaterComponent extends React.Component {
                                 <td>{item.NAME}</td>
                                 <td>{item.LOCATION}</td>
                                 <td>
-                                    <FloatingActionButton mini={true} data-id={item._id} onClick={this.btnEdit_click.bind(this)} >
-                                        <i className="material-icons">mode_edit</i>
+                                    <FloatingActionButton mini={true}  onClick={this.btnEdit_click.bind(this)} >
+                                        <i className="material-icons" data-id={item._id}>mode_edit</i>
                                     </FloatingActionButton>
                                 </td>
                                 <td>
-                                    <FloatingActionButton mini={true} data-id={item._id} onClick={this.btnRemove_click.bind(this)}>
-                                        <i className="material-icons">delete_forever</i>
+                                    <FloatingActionButton mini={true} onClick={this.btnRemove_click.bind(this)}>
+                                        <i className="material-icons" data-id={item._id}>delete_forever</i>
                                     </FloatingActionButton>
                                 </td>
                             </tr>

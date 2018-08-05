@@ -9,6 +9,7 @@ function getAllTheaters(req, res) {
         if (resu) {
             res.status(200).send({ data: resu });
         } else {
+            console.log(err)
             res.status(500).send({ message: "Error al Consultar" });
         }
     })
@@ -19,6 +20,7 @@ function getTheaters(req, res) {
         if (resu) {
             res.status(200).send({ data: resu });
         } else {
+            console.log(err)
             res.status(500).send({ message: "Error al Consultar" });
         }
     });
@@ -29,6 +31,7 @@ function moviesxtheaters(req, res) {
         if (!err) {
             res.status(200).send({ data: resu.map((a) => a.MOVIEID) });
         } else {
+            console.log(err)
             res.status(500).send({ message: "Error al Consultar" });
         }
     })

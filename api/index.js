@@ -1,12 +1,12 @@
 var mongoose = require("mongoose");
 var app = require("./app");
-var port = process.env.PORT || 3000;
+var port = 5000;
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/testsoftdev").then(() => {
-    console.log("connetions database succesull...");
+mongoose.connect("mongodb://root:root@localhost:27017/testsoftdev?authSource=admin").then(() => {
+    console.log("connections database successful...");
      app.listen(port, function () {
-        console.log("server run in port " + port);
-    })
+        console.log("server run in port ->" + port);
+    }) 
 }).catch((err) => {
     console.log("error database Connection -->" + err)
 })

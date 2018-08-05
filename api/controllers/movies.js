@@ -8,6 +8,7 @@ function getAllMovies(req, res) {
         if (resu) {
             res.status(200).send({ data: resu });
         } else {
+            console.log(err)
             res.status(500).send({ message: "Error al Consultar" });
         }
     })
@@ -18,6 +19,7 @@ function getMovie(req, res) {
         if (resu) {
             res.status(200).send({ data: resu });
         } else {
+            console.log(err)
             res.status(500).send({ message: "Error al Consultar" });
         }
     });
